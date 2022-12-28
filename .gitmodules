@@ -1,0 +1,3 @@
+[submodule "pwa-example"]
+	path = pwa-example
+	url = https://github.com/codedesign-webapp/pwa-example
