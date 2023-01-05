@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+</head>
+
+<body>
+<div id="main">
+    <p>클릭 숫자: {{ nClicks }}</p>
+    <p>카운트 다운: {{ fnCounter }}</p>
+    <button @click="fnIncrement">눌러 주세요!</button>
+</div>
+</body>
+<script !src="">
+    new Vue({
+        el: '#main',
+        data: {
+            nClicks: 0
+        },
+        computed: {
+            fnCounter: function () {
+                return 10 - this.nClicks;
+            }
+        },
+        methods: {
+            fnIncrement: function () {
+                this.nClicks++;
+            }
+        }
+    });
+</script>
+
+</html>
