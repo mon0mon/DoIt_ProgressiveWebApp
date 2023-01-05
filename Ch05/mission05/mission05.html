@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="https://unpkg.com/vuex@3"></script>
+</head>
+
+<body>
+    <div id="app">
+        <simple-counter startnumber="1"></simple-counter>
+        <simple-counter startnumber="10"></simple-counter>
+        <simple-counter startnumber="100"></simple-counter>
+    </div>
+</body>
+
+<script !src="">
+    Vue.component('simple-counter', {
+        props: ['startnumber'],
+        template: `
+          <button v-on:click="fnIncCounter">카운터 : {{fnGetCounter}}</button>
+        `,
+        data: function() {
+            return {nCounter: parseInt(this.startnumber)}
+        },
+        computed: {
+            fnGetCounter : function () {
+                return this.nCounter;
+            }
+        },
+        methods: {
+            fnIncCounter : function () {
+                return this.nCounter++;
+            }
+        }
+    })
+
+    new Vue({
+        el: '#app',
+    })
+</script>
+
+</html>
